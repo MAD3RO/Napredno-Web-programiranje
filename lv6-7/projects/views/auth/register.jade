@@ -1,0 +1,17 @@
+extends ../layout2
+
+block content
+    div(class="container")
+                a(href='/auth/login', class="btn btn-primary") Login
+                h1 Register
+                form(action='/auth/register',method='post',name='updateproject',enctype='application/x-www-form-urlencoded')
+                    p
+                        label(for='username') Username
+                        input(type='text', name='username')
+                    p
+                        label(for='password') Password
+                        input(type='password', name='password')
+                    p
+                        label(for='cpassword') Confirm password
+                        input(type='password', name='cpassword')
+                    input(type='submit', class="btn btn-primary")

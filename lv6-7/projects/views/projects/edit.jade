@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+    div(class="container")
+        h1.
+            Project
+        form(action='/projects/#{project._id}/edit',method='post',name='updateproject',enctype='application/x-www-form-urlencoded')
+            p Name:
+                input#inputNaziv(type='text', value='#{project.naziv}', name='naziv')
+            p Description:
+                input#inputOpis(type='text', value='#{project.opis}', name='opis')
+            p Price:
+                input#inputCijena(type='number', value='#{project.cijena}', name='cijena')
+            p Jobs:
+                input#inputPoslovi(type='text', value='#{project.poslovi}', name='poslovi')
+            p Start date:
+                input#inputPdatum(type='date', value='#{pdatum}', name='pdatum')
+            p End date:
+                input#inputZdatum(type='date', value='#{zdatum}', name='zdatum')
+            p
+                input(type='checkbox', checked=project.arhivirano, name='arhivirano')
+            p
+                input(type='hidden',value='PUT',name='_method')
+            p
+                button#btnSubmit(type='submit', class="btn btn-primary").
+                    Update
+        p Members:
+        ul
+                - each clan_tima, i in clanovi_tima
+                    li
+                        = clan_tima.username
+        form(action='/projects/#{project._id}/addmember',method='post',name='addmember',enctype='application/x-www-form-urlencoded')
+                select(name="new_clan_tima", size=not_clanovi_tima.length)
+                     each not_clan, i in not_clanovi_tima
+                            option(value=not_clan._id) #{not_clan.username}
+
+                p
+                    input(type='hidden',value='PUT',name='_method')
+                p
+                    button#btnSubmitMember(type='submit', class="btn btn-primary").
+                        Add

@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    div(class="container")
+        h1.
+            #{title}
+        form#formAddProject(name="addproject",method="post",action="/projects")
+            p Name:
+                input#inputNaziv(type='text', name='naziv')
+            p Description:
+                input#inputOpis(type='text', name='opis')
+            p Price:
+                input#inputCijena(type='number', name='cijena')
+            p Jobs:
+                input#inputPoslovi(type='text', name='poslovi')
+            p Start date:
+                input#inputPdatum(type='date', name='pdatum')
+            p End date:
+                input#inputZdatum(type='date', name='zdatum')
+            p
+                button#btnSubmit(type="submit", class="btn btn-primary") Create

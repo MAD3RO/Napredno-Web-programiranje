@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css',rel='stylesheet')
+    nav(class="navbar navbar-default")
+      div(class="container-fluid")
+        div(class="navbar-header")
+          a(href="#",class="navbar-brand") Projects App
+        ul(class="nav navbar-nav")
+          li(class="active")
+              a(href='/projects/') My projects
+          li
+              a(href='/projects/arhivirano') Archived projects
+          li
+              a(href='/projects/memberprojects') Projects (member)
+          li
+              a(href='/projects/new') Add new
+          li
+              a(href='/auth/logout') Log out
+  body
+    block content

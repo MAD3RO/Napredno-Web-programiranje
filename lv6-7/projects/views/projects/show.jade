@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  div(class="container")
+    h1.
+        Info #{project._id}
+    p Name: #{project.naziv}
+    p Description: #{project.opis}
+    p Price: #{project.cijena}
+    p Jobs: #{project.poslovi}
+    p Start date: #{pdatum}
+    p End date: #{zdatum}
+    p Members:
+    ul
+          - each clan_tima, i in clanovi_tima
+                   li
+                       = clan_tima.username
+    p Arhivirano: #{project.arhivirano}

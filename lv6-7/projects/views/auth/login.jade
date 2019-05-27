@@ -1,0 +1,14 @@
+extends ../layout2
+
+block content
+    div(class="container")
+        a(href='/auth/register', class="btn btn-primary") Register
+        h1 Sign-in
+        form(action='/auth/login',method='post',name='updateproject',enctype='application/x-www-form-urlencoded')
+                    p
+                        label(for='username') Username
+                        input(type='text', name='username')
+                    p
+                        label(for='password') Password
+                        input(type='password', name='password')
+                    input(type='submit', class="btn btn-primary")
